@@ -1,0 +1,45 @@
+// Definindo os limites de XP para cada nível
+const limitesXP = {
+  ferro: 1000,
+  bronze: 2000,
+  prata: 3000,
+  ouro: 4000,
+  platina: 5000,
+  diamante: 6000,
+  ascendente: 7000,
+  imortal: 8000,
+  radiante: 9000
+};
+
+// Função para classificar o herói com base no XP
+function classificarNivelHeroi(xp) {
+  if (xp >= limitesXP.radiante) {
+    return 'Radiante';
+  } else if (xp >= limitesXP.imortal) {
+    return 'Imortal';
+  } else if (xp >= limitesXP.ascendente) {
+    return 'Ascendente';
+  } else if (xp >= limitesXP.diamante) {
+    return 'Diamante';
+  } else if (xp >= limitesXP.platina) {
+    return 'Platina';
+  } else if (xp >= limitesXP.ouro) {
+    return 'Ouro';
+  } else if (xp >= limitesXP.prata) {
+    return 'Prata';
+  } else if (xp >= limitesXP.bronze) {
+    return 'Bronze';
+  } else if (xp >= limitesXP.ferro) {
+    return 'Ferro';
+  } else {
+    return 'Nível desconhecido';
+  }
+}
+
+// Exemplo de uso com diferentes valores de XP
+const xpDoHeroi = [1000, 2500, 5000, 8000, 9000, 10000];
+
+xpDoHeroi.forEach((xp) => {
+  const resultadoClassificacao = classificarNivelHeroi(xp);
+  console.log(`XP: ${xp} - Classificação: ${resultadoClassificacao}`);
+});
